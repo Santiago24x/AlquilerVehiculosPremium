@@ -1,7 +1,5 @@
 package com.uts.AlquilerVehiculos.service;
 
-
-
 import com.uts.AlquilerVehiculos.model.Cliente;
 import com.uts.AlquilerVehiculos.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +24,14 @@ public class ClienteService {
 
     public Cliente guardar(Cliente cliente) {
         return clienteRepository.save(cliente);
+    }
+
+    public Cliente actualizar(Long id, Cliente clienteActualizado) {
+        if (clienteRepository.existsById(id)) {
+            clienteActualizado.setId(id);
+            return clienteRepository.save(clienteActualizado);
+        }
+        return null;
     }
 
     public boolean eliminar(Long id) {

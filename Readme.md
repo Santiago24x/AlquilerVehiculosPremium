@@ -1,3 +1,21 @@
+# ALQUILER DE AUTOS
+
+![Diagrama](./banner.jpg)
+
+
+
+## MODELO CONCEPTUAL
+
+El usuario podra realizar el alquiler de un vehiculo al llegar a las  instalaciones, se podra registrar con anteriorirdad atraves de n  formulario para estar en nuestra base de datos y agilizar el proceso de  alquiler, podra filtrar los autos segun su gama, este mismo usuario  podra rentar la cantidad de vehiculos que desee, hay vehiculos que  poseen un seguro y este solo sera para vehiculos de gama media y alta,  si el auto se renta a un amigo del dueño se puede omitir el cobro de  este seguro, los alquileres se realizaran por dias, y si el usuario se  pasa de los dias sera multado, el cliente al elegir el auto genera una  orden la cual pasara a preparacion y sera entregado al cliente, esta  orden tendra 2 estados, pendiente y completada, completada la orden se  emitira una factura para que el usuario realice el pago del alquiler y  pueda disfrutar de su auto.
+
+Los valores de las multas seran definidos atraves de consultas, segun el porcentaje que el dueño desee.
+
+Las multas se referenciaran junto con la factura inicial de alquiler.
+
+Tambien se debe manejar el estado fisico del vehiculo en  un texto descriptivo de salida y un texto descriptivo de vuelta al lugar de rentado, llego el caso que hayan daños se emitira tambien una  factura de cobro de loa arreglos del vehiculo si este es de gama baja,  ya que no paga seguro.
+
+
+
 # Justificación y Pertinencia de la Temática
 
 El presente proyecto busca optimizar el proceso de alquiler de vehículos, permitiendo a los clientes registrar su información previamente para agilizar la gestión de reservas. Además, se implementará un sistema de filtrado por gamas de vehículos, asegurando una experiencia personalizada para cada usuario. La automatización del proceso de generación de órdenes, gestión de estados de alquiler, y emisión de facturas y multas contribuirá significativamente a la eficiencia del servicio, brindando a los clientes una experiencia fluida y confiable.
@@ -5,6 +23,17 @@ El presente proyecto busca optimizar el proceso de alquiler de vehículos, permi
 # Mundo del Problema
 
 Actualmente, muchas empresas de alquiler de vehículos manejan procesos manuales que generan demoras en la atención al cliente. El registro de usuarios, la selección de vehículos y la generación de órdenes suelen realizarse de forma presencial y sin un sistema centralizado. Esto provoca retrasos, errores en la facturación y dificultades en la administración de multas y seguros. Con la implementación de una plataforma digital, se busca optimizar estos procesos mediante la automatización y digitalización del flujo de trabajo.
+
+# Tecnologías Utilizadas
+
+- **Spring Boot** - Framework para el backend.
+- **Spring Data JPA** - Manejo de persistencia con Hibernate.
+- **MySQL** - Base de datos relacional.
+- **Swagger (Springdoc OpenAPI)** - Documentación interactiva de la API.
+- **Postman** - Herramienta para probar la API.
+- **Typora** - Para el desarrollo de la documentación general.  
+
+
 
 # Requerimientos Funcionales
 
@@ -197,3 +226,76 @@ Actualmente, muchas empresas de alquiler de vehículos manejan procesos manuales
 
 Se muestra la evidencia de la creación de la cuenta de Jira con la cual se manejara la metodología scrum en el desarrollo del sistema.![Diagrama](./Cuenta_Jira.png)
 
+# Documentación de la API con Swagger
+
+Para acceder a la documentación interactiva de la API, inicia el servidor de Spring Boot y abre el siguiente enlace en tu navegador:
+
+http://localhost:8080/swagger-ui/index.html
+
+Esto te permitirá probar los endpoints directamente desde la interfaz de Swagger.
+
+## Endpoints
+
+### Tabla Cliente
+
+#### 1. Obtener todos los clientes
+
+**GET** `/clientes`
+
+#### 2. Obtener un cliente por ID
+
+**GET** `/clientes/{id}`
+
+#### 3. Crear un nuevo cliente
+
+**POST** `/clientes`
+
+**Ejemplo de Cuerpo:**
+
+```
+{
+
+ "nombre": "Pedro ",
+
+ "apellido": "Navaja 2.0",
+
+ "identificacion": "1005282286"
+
+}
+```
+
+
+
+#### 4. Actualizar un cliente existente
+
+**PUT** `/clientes/{id}`
+
+**Ejemplo de Cuerpo:**
+
+**
+
+```
+{
+
+ "nombre": "Pedro ",
+
+ "apellido": "Navaja 2.0",
+
+ "identificacion": "1005282286"
+
+}
+```
+
+
+
+#### 5. Eliminar un cliente
+
+**DELETE** `/clientes/{id}`
+
+# Instalación y Uso
+
+1. Clonar el repositorio.
+2. Ejecutar la base de datos que se encuentra en Database.txt
+3. Configurar la base de datos en `application.properties`.
+4. Ejecutar el proyecto con Spring Boot.
+5. Acceder a Swagger para probar la API.
