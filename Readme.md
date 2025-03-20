@@ -179,3 +179,21 @@ Actualmente, muchas empresas de alquiler de vehículos manejan procesos manuales
 
 ## Diagrama de Casos de Uso
 
+![Diagrama](./D_Casosdeuso.png)
+
+
+
+## Diagrama de Clases
+
+![Diagrama](./D_clases.jpg)
+
+
+
+## Modelo de Base de Datos
+
+![Diagrama](./modeloBD.png)
+
+## Cuenta de Jira
+
+Se muestra la evidencia de la creación de la cuenta de Jira con la cual se manejara la metodología scrum en el desarrollo del sistema.![Diagrama](./Cuenta_Jira.png)
+
